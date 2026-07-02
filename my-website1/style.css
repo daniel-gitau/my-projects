@@ -1,0 +1,238 @@
+/* ==========================================
+   1. Global Resets & Variables
+   ========================================== */
+:root {
+  --bg-color: #f7f9fa;
+  --card-bg: #ffffff;
+  --text-main: #2d3748;
+  --text-muted: #718096;
+  --accent-color: #3182ce;
+  --accent-hover: #2b6cb0;
+  --border-radius: 8px;
+  --shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    "Georgia", "Times New Roman", serif; /* Book-like typography for narrative */
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.8; /* Comfortable book layout line-spacing */
+  padding: 0;
+}
+
+/* Sans-serif for headings, nav, and UI elements to balance the look */
+h1,
+h2,
+h3,
+nav,
+.btn,
+footer,
+strong {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ==========================================
+   2. Header & Navigation
+   ========================================== */
+header {
+  background-color: var(--card-bg);
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--accent-color);
+}
+
+/* ==========================================
+   3. Layout & Cards
+   ========================================== */
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.card h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: #1a202c;
+  border-bottom: 2px solid #edf2f7;
+  padding-bottom: 0.5rem;
+}
+
+.card p {
+  margin-bottom: 1.25rem;
+}
+
+/* Profile Picture Layout */
+.profile-pic {
+  display: block;
+  max-width: 200px;
+  height: auto;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  box-shadow: var(--shadow);
+  border: 3px solid white;
+}
+
+@media (min-width: 600px) {
+  /* Floats the picture to the right on larger screens for a nice editorial layout */
+  .profile-pic {
+    float: right;
+    margin: 0 0 1rem 1.5rem;
+  }
+}
+
+/* Clearfix for floated profile picture */
+#early-days::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Lists */
+ul,
+ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Reflection Card Styling */
+.reflection-card {
+  background-color: #f8fafc;
+  border-left: 4px solid var(--accent-color);
+}
+
+code {
+  background-color: #edf2f7;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+/* ==========================================
+   4. Call to Action & Social Links
+   ========================================== */
+.cta-area {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #edf2f7;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  margin: 1rem 0 2rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--accent-hover);
+}
+
+.social-links p {
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.social-item {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--text-main);
+  padding: 0.4rem 0.8rem;
+  margin: 0.25rem;
+  border-radius: 4px;
+  background-color: #edf2f7;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+/* Clean hover states for branding colors */
+.linkedin-brand:hover {
+  background-color: #0077b5;
+  color: white;
+}
+.github-brand:hover {
+  background-color: #24292e;
+  color: white;
+}
+.instagram-brand:hover {
+  background-color: #e1306c;
+  color: white;
+}
+.facebook-brand:hover {
+  background-color: #1877f2;
+  color: white;
+}
+.youtube-brand:hover {
+  background-color: #ff0000;
+  color: white;
+}
+
+/* ==========================================
+   5. Footer
+   ========================================== */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
